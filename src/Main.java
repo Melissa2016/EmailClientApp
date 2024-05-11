@@ -35,6 +35,10 @@ class Email {
         return subject;
     }
 
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
     public String getBody() {
         return body;
     }
