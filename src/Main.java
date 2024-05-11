@@ -79,7 +79,11 @@ class SendEmail extends EmailAction {
     }
 
     @Override
-
+    public void performAction(Email email) {
+        // Code to send email
+        System.out.println("Email sent to: " + email.getRecipient());
+        email.setSent(true);
+    }
 }
 
 class ArchiveEmail extends EmailAction {
@@ -96,7 +100,10 @@ class ArchiveEmail extends EmailAction {
 class SetPriority extends EmailAction {
     private String priority;
 
-
+    public SetPriority(Email email, String priority) {
+        super(email);
+        this.priority = priority;
+    }
 
     @Override
     public void performAction(Email email) {
